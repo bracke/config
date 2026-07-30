@@ -7,7 +7,7 @@ maintainers = ["Bent Bracke <bent@bracke.dk>"]
 maintainers-logins = ["bracke"]
 licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
 website = "https://github.com/bracke/config"
-long-description = "Headless configuration for Ada 2022 — a general settings loader for the whole stack, not tied to any one application."
+long-description = "Headless configuration for Ada 2022 - a general settings loader for the whole stack, not tied to any one application."
 
 tags = ["config", "settings", "env", "headless"]
 
