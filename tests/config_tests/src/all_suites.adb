@@ -1,5 +1,6 @@
 with Foundation_Tests;
 with Keys_Tests;
+with Store_Tests;
 
 package body All_Suites is
 
@@ -9,6 +10,7 @@ package body All_Suites is
    begin
       Foundation_Tests.Add_Tests (S);
       Keys_Tests.Add_Tests (S);
+      Store_Tests.Add_Tests (S);
       return S;
    end Suite;
 

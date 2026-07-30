@@ -5,6 +5,15 @@ Keep a Changelog; the project is pre-1.0 and built phase-by-phase.
 
 ## [Unreleased]
 
+### Phase 2 — Bounded store
+- `Config.Store`: a bounded, limited flat map from a dotted key to an ordered
+  value list, each key carrying its kind, provenance (source id), and secret
+  flag; keys/values live in one arena (no heap). `Set` replaces a key's value
+  (later sources override earlier, CFG-INV-003); `Append` extends an array
+  (with an in-place fast path and a copy path for interleaved growth). Capacity,
+  value-slot, and pool exhaustion are refused (CFG-INV-002).
+- `Store_Tests` suite (5 tests).
+
 ### Phase 1 — Keys, errors & value kinds
 - `Config.Keys`: the dotted-key grammar (segments of `[A-Za-z0-9_-]` separated
   by `.`, bounded length/depth, no leading/trailing/double separator) with
