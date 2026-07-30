@@ -2,6 +2,7 @@ with Foundation_Tests;
 with Keys_Tests;
 with Store_Tests;
 with Reader_Tests;
+with Parser_Tests;
 
 package body All_Suites is
 
@@ -13,6 +14,7 @@ package body All_Suites is
       Keys_Tests.Add_Tests (S);
       Store_Tests.Add_Tests (S);
       Reader_Tests.Add_Tests (S);
+      Parser_Tests.Add_Tests (S);
       return S;
    end Suite;
 

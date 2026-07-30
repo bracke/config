@@ -5,6 +5,19 @@ Keep a Changelog; the project is pre-1.0 and built phase-by-phase.
 
 ## [Unreleased]
 
+### Phase 4 — dotenv & INI parsers
+- `Config.Parsers` parent (Parse_Status/Parse_Result) + `Config.Parsers.Scan`
+  (trim + value unquoting: bare, single-quoted literal, double-quoted with
+  \n \t \r \" \\ escapes).
+- `Config.Parsers.Dotenv`: KEY=VALUE lines, '#' comments, optional `export `,
+  quoted/bare values; keys validated as config keys.
+- `Config.Parsers.Ini`: `[section]` headers (incl. nested `[a.b]`) forming dotted
+  keys, `#`/`;` comments, quoted/bare values.
+- Both are single-pass and bounded, reduce to the same store model
+  (CFG-INV-008), and report the first malformed line rather than raising
+  (CFG-INV-007).
+- `Parser_Tests` suite (4 tests).
+
 ### Phase 3 — Sources, precedence & typed access
 - `Config.Sources`: the source seam (`Load` populates a store, tagged with a
   provenance id). Applying sources in increasing precedence order yields layered

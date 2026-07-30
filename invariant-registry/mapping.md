@@ -8,8 +8,10 @@
 | CFG-INV-004 | `Reader_Tests.Test_Typed_Access`, `Test_Missing_And_Invalid` (required-vs-default; missing/invalid reported) | proven |
 | CFG-INV-005 | `Reader_Tests.Test_Missing_And_Invalid` (non-numeric/non-boolean reported, never raised) | proven |
 | CFG-INV-006 | `Reader_Tests.Test_Redacted_Dump` (secret key rendered as placeholder; value absent) | proven |
+| CFG-INV-007 | `Parser_Tests.Test_Dotenv_Malformed`, `Test_Ini_Malformed` (malformed dotenv/INI reported with line, never raised) | proven |
+| CFG-INV-008 | `Parser_Tests.Test_Dotenv`, `Test_Ini` (dotenv + INI parse to the same store model) | proven |
 | CFG-INV-010 | dependency-boundary audit in `check_config`; core `with`s only stdlib + representation | audited |
 
-Remaining `CFG-INV-*` entries (007-009, see `docs/ai/invariants.md`) are
+Remaining `CFG-INV-*` entries (009, see `docs/ai/invariants.md`) are
 `planned`; each gains a row here when its owning package and test land (see
 `docs/PHASE_STATUS.md`). At Phase 0 only the dependency boundary is enforceable.

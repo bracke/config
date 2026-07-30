@@ -8,7 +8,7 @@ Built phase-by-phase; each phase is buildable, its suite green, and committed.
 | 1 | `Config.Keys` (dotted-key grammar) + `Config.Errors` + value-kind taxonomy | **done** |
 | 2 | `Config.Store` (bounded flat map: dotted key -> value list + provenance + secret) | **done** |
 | 3 | `Config.Sources` seam + layering/precedence/merge + typed access (`Get_*`) + redacted dump | **done** |
-| 4 | dotenv + INI parsers (bounded, injection-safe) | planned |
+| 4 | dotenv + INI parsers (bounded, injection-safe) | **done** |
 | 5 | JSON source via `representation` (objects -> dotted keys, arrays -> value lists) | planned |
 | 6 | TOML parser (tables, arrays, typed scalars, datetimes, dotted keys) | planned |
 | 7 | `config_runtime` adapter (env + file sources) + `Config.Testing` doubles + example | planned |
