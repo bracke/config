@@ -5,6 +5,13 @@ Keep a Changelog; the project is pre-1.0 and built phase-by-phase.
 
 ## [Unreleased]
 
+### Phase 8 — Hardening & V1
+- `Hardening_Tests`: a parser fuzz (4000 random structural byte strings through
+  dotenv/INI/JSON/TOML) asserting none raises and the store stays bounded, and a
+  precedence stress asserting last-wins with correct provenance.
+- V1 feature-complete: core (31 tests) + the `config_runtime` adapter (3 tests) +
+  example, all gated by `check_config --release`.
+
 ### Phase 7 — Env/format helpers & config_runtime adapter
 - `Config.Env`: pure environment-name -> dotted-key mapping (strip prefix,
   lowercase, `_` -> `.`), rejecting names that don't match or don't form a valid

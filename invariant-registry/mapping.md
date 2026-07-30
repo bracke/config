@@ -13,5 +13,10 @@
 | CFG-INV-009 | `Json_Tests.Test_Json_Object`/`Test_Json_Arrays`/`Test_Json_Errors` (JSON parsed via `Representation.JSON.Documents`) | proven |
 | CFG-INV-010 | dependency-boundary audit in `check_config`; core `with`s only stdlib + representation | audited |
 
-All CFG-INV-001..010 are proven or audited. The config_runtime
-adapter lands in a later phase on top of this baseline.
+Hardening (`Hardening_Tests`): `Test_Parser_Fuzz` (4000 random inputs through all
+four parsers — none raises, the store stays within bounds) reinforces
+CFG-INV-002/007; `Test_Precedence_Stress` reinforces CFG-INV-003.
+
+All CFG-INV-001..010 are proven or audited. V1 is feature-complete: core (31
+tests) + the four parsers (env/dotenv/INI/JSON/TOML) + the `config_runtime`
+adapter.

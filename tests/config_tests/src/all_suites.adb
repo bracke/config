@@ -5,6 +5,7 @@ with Reader_Tests;
 with Parser_Tests;
 with Json_Tests;
 with Toml_Tests;
+with Hardening_Tests;
 
 package body All_Suites is
 
@@ -19,6 +20,7 @@ package body All_Suites is
       Parser_Tests.Add_Tests (S);
       Json_Tests.Add_Tests (S);
       Toml_Tests.Add_Tests (S);
+      Hardening_Tests.Add_Tests (S);
       return S;
    end Suite;
 

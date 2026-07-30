@@ -24,7 +24,9 @@ no environment and opens no files — every source is an injected seam, enforced
 
 ## Status
 
-`0.1.0-dev`, built phase-by-phase. See `docs/PHASE_STATUS.md`.
+`0.1.0-dev` — **V1 feature-complete**. Core, the four format parsers
+(dotenv/INI/JSON/TOML) with typed access, and the `config_runtime` adapter are
+all built and green; `check_config --release` passes. See `docs/PHASE_STATUS.md`.
 
 ## Layout
 
