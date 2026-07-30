@@ -17,6 +17,8 @@ config = "*"
 [[depends-on]]
 secrets = "*"
 [[depends-on]]
+secrets_file = "*"
+[[depends-on]]
 representation = "*"
 [[depends-on]]
 cryptolib = "*"
@@ -25,6 +27,8 @@ cryptolib = "*"
 config = { path = ".." }
 [[pins]]
 secrets = { path = "../../secrets" }
+[[pins]]
+secrets_file = { path = "../../secrets/secrets_file" }
 [[pins]]
 representation = { path = "../../representation" }
 [[pins]]

@@ -18,5 +18,5 @@ scalar vocabulary.
 | `Config.Env` | Environment-name -> dotted-key mapping (pure). | 7 |
 | `Config.Formats` | Unified parser dispatch. | 7 |
 | `Config_Runtime` (crate) | `Environment` + `File` sources — the I/O adapters. | 7 |
-| `Config_Secrets` (crate) | Bridge: read secret values as protected `Secrets.Values.Secret`. | — |
+| `Config_Secrets` (crate) | Bridge: read secret values as protected `Secrets.Values.Secret`; optionally source them from a passphrase `secrets_file` vault (`Open_Vault`, vault-first `Get_Secret`). | — |
 | (`Config.Sources.Memory` serves as the deterministic in-core source double.) | | 3 |

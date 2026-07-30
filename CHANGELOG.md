@@ -5,6 +5,13 @@ Keep a Changelog; the project is pre-1.0 and built phase-by-phase.
 
 ## [Unreleased]
 
+- **config_secrets can source secrets from an encrypted vault**: `Open_Vault`
+  decrypts a passphrase `secrets_file` vault whose path is a config value (key
+  `secrets.vault_file`), with the passphrase from `SECRETS_PASSPHRASE` (never
+  from config). The `Get_Secret (Vault, S, Key)` overload prefers the vault and
+  falls back to the config store — so an app's secrets can live in an encrypted
+  file instead of plaintext env. New tests (vault-backed + error paths).
+
 - **Secret material is scrubbed from memory**: `Config.Store` is now a
   controlled type whose char pool is zeroed with `CryptoLib.Secure_Wipe` on
   `Clear` and on finalisation, so a secret value (DB password, API key) does not

@@ -14,5 +14,7 @@ package Bridge_Tests is
    procedure Test_Is_Secret (Item : in out Fixture);
    procedure Test_Absent (Item : in out Fixture);
    procedure Test_Dump_Redacts (Item : in out Fixture);
+   procedure Test_Vault_Backed (Item : in out Fixture);
+   procedure Test_Vault_Errors (Item : in out Fixture);
 
 end Bridge_Tests;
