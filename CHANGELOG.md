@@ -5,6 +5,16 @@ Keep a Changelog; the project is pre-1.0 and built phase-by-phase.
 
 ## [Unreleased]
 
+### Phase 5 — JSON source
+- `Config.Parsers.Json`: parse a JSON object into a store using
+  `Representation.JSON.Documents` (CFG-INV-009). Nested objects flatten to dotted
+  keys, scalar arrays become value lists, numbers are typed integer/float by
+  form, booleans via `Bool_Value`, and null members are omitted. A decode error,
+  an unsupported structure (array of objects/arrays), an invalid key, or a store
+  overflow is reported, never raised (CFG-INV-007). All three line-oriented and
+  structured formats now reduce to the same store model (CFG-INV-008).
+- `Json_Tests` suite (3 tests).
+
 ### Phase 4 — dotenv & INI parsers
 - `Config.Parsers` parent (Parse_Status/Parse_Result) + `Config.Parsers.Scan`
   (trim + value unquoting: bare, single-quoted literal, double-quoted with
