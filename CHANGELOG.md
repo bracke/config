@@ -5,6 +5,15 @@ Keep a Changelog; the project is pre-1.0 and built phase-by-phase.
 
 ## [Unreleased]
 
+- **config_secrets bridge**: read a secret-flagged config value as a protected
+  `Secrets.Values.Secret` (bounded, wiped on finalisation, redacted `Image`,
+  constant-time compare) via `Config_Secrets.Get_Secret`, instead of the plain
+  `String` from `Config.Reader.Get_String`. Bridge crate because the config core
+  forbids cryptolib; joins config + secrets outside either core. New
+  `config_secrets` + `config_secrets_tests` (4 tests), wired into
+  `check_config --release`.
+
+
 ### Phase 8 — Hardening & V1
 - `Hardening_Tests`: a parser fuzz (4000 random structural byte strings through
   dotenv/INI/JSON/TOML) asserting none raises and the store stays bounded, and a

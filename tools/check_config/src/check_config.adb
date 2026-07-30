@@ -98,6 +98,8 @@ procedure Check_Config is
       Need_Directory ("tests/config_tests");
       Need_Directory ("config_runtime");
       Need_Directory ("config_runtime/tests/config_runtime_tests");
+      Need_Directory ("config_secrets");
+      Need_Directory ("tests/config_secrets_tests");
       Need_Directory ("examples/config_examples");
       Need_Directory ("tools");
       Need_Directory ("docs");
@@ -118,6 +120,9 @@ procedure Check_Config is
       Need_File ("src/config.ads");
       Need_File ("tests/config_tests/alire.toml");
       Need_File ("config_runtime/alire.toml");
+      Need_File ("config_secrets/alire.toml");
+      Need_File ("config_secrets/src/config_secrets.ads");
+      Need_File ("tests/config_secrets_tests/alire.toml");
       Need_File ("examples/config_examples/alire.toml");
       Need_File ("examples/config_examples/src/quickstart.adb");
       Need_File ("invariant-registry/mapping.md");
@@ -199,6 +204,8 @@ procedure Check_Config is
       Rt_Dir    : constant String := The_Root & "/config_runtime";
       Rt_Tests  : constant String :=
         Rt_Dir & "/tests/config_runtime_tests";
+      Sec_Dir   : constant String := The_Root & "/config_secrets";
+      Sec_Tests : constant String := The_Root & "/tests/config_secrets_tests";
       Ex_Dir    : constant String := The_Root & "/examples/config_examples";
       No_Args   : constant GNAT.OS_Lib.Argument_List := [];
    begin
@@ -219,6 +226,15 @@ procedure Check_Config is
       then
          Ignored :=
            Run ("run runtime tests", Rt_Tests, Rt_Tests & "/bin/tests", No_Args);
+      end if;
+      if Run ("build secrets bridge", Sec_Dir, Alr,
+              [new String'("--non-interactive"), new String'("build")])
+        and then Run ("build secrets bridge tests", Sec_Tests, Alr,
+                      [new String'("--non-interactive"), new String'("build")])
+      then
+         Ignored :=
+           Run ("run secrets bridge tests", Sec_Tests, Sec_Tests & "/bin/tests",
+                No_Args);
       end if;
       if Run ("build example", Ex_Dir, Alr,
               [new String'("--non-interactive"), new String'("build")])

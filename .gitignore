@@ -4,6 +4,7 @@
 /alire/
 bin/
 **/obj/
+**/lib/
 **/config/
 **/alire/
 **/bin/
