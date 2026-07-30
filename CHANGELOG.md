@@ -5,6 +5,17 @@ Keep a Changelog; the project is pre-1.0 and built phase-by-phase.
 
 ## [Unreleased]
 
+### Phase 1 — Keys, errors & value kinds
+- `Config.Keys`: the dotted-key grammar (segments of `[A-Za-z0-9_-]` separated
+  by `.`, bounded length/depth, no leading/trailing/double separator) with
+  `Is_Valid_Key`, `Depth`, and `Segment`. Proves CFG-INV-001.
+- `Config.Errors`: failure vocabulary reusing `Representation.Errors.Error_Category`
+  + stable locale-neutral machine identifiers.
+- `Config.Values`: the `Value_Kind` taxonomy (String/Integer/Float/Boolean/
+  Datetime) with kind/boolean images and case-insensitive `Parse_Boolean`
+  (true/false, yes/no, on/off, 1/0).
+- `Keys_Tests` suite (6 tests).
+
 ### Phase 0 — Repository & tooling foundation
 - Root `config` crate: `alire.toml`, `config.gpr`, and `src/config.ads` (root
   strong-scalar vocabulary: `API_Version`, bounded entry/value/source/segment

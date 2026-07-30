@@ -1,4 +1,5 @@
 with Foundation_Tests;
+with Keys_Tests;
 
 package body All_Suites is
 
@@ -7,6 +8,7 @@ package body All_Suites is
         AUnit.Test_Suites.New_Suite;
    begin
       Foundation_Tests.Add_Tests (S);
+      Keys_Tests.Add_Tests (S);
       return S;
    end Suite;
 
