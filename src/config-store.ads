@@ -7,6 +7,7 @@
 --  list (later sources override earlier ones, CFG-INV-003); Append extends a
 --  key's list (used while parsing an array).
 with Config.Values;
+private with Ada.Finalization;
 package Config.Store
   with Preelaborate
 is
@@ -90,7 +91,8 @@ private
    type Store
      (Capacity        : Natural;
       Values_Capacity : Natural;
-      Pool            : Natural) is limited record
+      Pool            : Natural)
+     is limited new Ada.Finalization.Limited_Controlled with record
       Entries   : Entry_Array (1 .. Capacity);
       Slots     : Value_Slot_Array (1 .. Values_Capacity);
       Chars     : String (1 .. Pool);
@@ -98,5 +100,9 @@ private
       Slot_Top  : Natural := 0;   --  value slots used
       Pool_Top  : Natural := 0;   --  chars used
    end record;
+
+   --  Secret material may sit in Chars; zero the used pool when the store is
+   --  finalised so nothing survives in memory (CFG-INV-011).
+   overriding procedure Finalize (S : in out Store);
 
 end Config.Store;

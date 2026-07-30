@@ -20,10 +20,16 @@ aunit = "^26.0.0"
 config = "*"
 
 [[depends-on]]
+cryptolib = "*"
+
+[[depends-on]]
 project_tools = "*"
 
 [[pins]]
 config = { path = "../.." }
+
+[[pins]]
+cryptolib = { path = "../../../cryptolib" }
 
 [[pins]]
 project_tools = { path = "../../../project_tools" }

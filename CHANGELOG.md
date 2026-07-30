@@ -5,6 +5,13 @@ Keep a Changelog; the project is pre-1.0 and built phase-by-phase.
 
 ## [Unreleased]
 
+- **Secret material is scrubbed from memory**: `Config.Store` is now a
+  controlled type whose char pool is zeroed with `CryptoLib.Secure_Wipe` on
+  `Clear` and on finalisation, so a secret value (DB password, API key) does not
+  linger in the arena after reload or scope exit (CFG-INV-011). The config core
+  boundary now permits `cryptolib`'s pure hygiene primitives (`Secure_Wipe`) —
+  preelaborable, no I/O/clock — alongside stdlib + representation.
+
 - **config_secrets bridge**: read a secret-flagged config value as a protected
   `Secrets.Values.Secret` (bounded, wiped on finalisation, redacted `Image`,
   constant-time compare) via `Config_Secrets.Get_Secret`, instead of the plain

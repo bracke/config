@@ -22,5 +22,9 @@ land.
   model (dotted key -> value list), so typed access is format-agnostic.
 - **CFG-INV-009** — JSON parsing and scalar typing go through `representation`;
   the core contains no second JSON reader or number parser.
-- **CFG-INV-010** — The core `with`s only the Ada stdlib and `representation`;
-  the dependency boundary is audited by `check_config`.
+- **CFG-INV-010** — The core `with`s only the Ada stdlib, `representation`, and
+  `cryptolib`'s pure `Secure_Wipe`; the dependency boundary is audited by
+  `check_config`.
+- **CFG-INV-011** — Secret material never lingers in the store's char pool: the
+  used region is zeroed (`CryptoLib.Secure_Wipe`) on `Clear` and on
+  finalisation.

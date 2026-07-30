@@ -19,11 +19,16 @@ config = "*"
 [[depends-on]]
 representation = "*"
 
+[[depends-on]]
+cryptolib = "*"
+
 [[pins]]
 config = { path = ".." }
 
 [[pins]]
 representation = { path = "../../representation" }
+[[pins]]
+cryptolib = { path = "../../cryptolib" }
 
 [build-profiles]
 "*" = "development"

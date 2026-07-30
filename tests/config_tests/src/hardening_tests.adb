@@ -4,6 +4,7 @@ with AUnit.Assertions; use AUnit.Assertions;
 with AUnit.Test_Caller;
 
 with Config.Store;
+with Config.Store.Probe;
 with Config.Reader;
 with Config.Sources.Memory;
 with Config.Parsers; use Config.Parsers;
@@ -84,6 +85,40 @@ package body Hardening_Tests is
       end loop;
    end Test_Precedence_Stress;
 
+   --  Observe (through the private char pool) that Clear zeroes the material
+   --  that had been written, so a secret value does not linger in the arena
+   --  (CFG-INV-011). Uses CryptoLib.Secure_Wipe via Config.Store.Clear.
+   procedure Test_Pool_Wiped_On_Clear (Item : in out Fixture) is
+      pragma Unreferenced (Item);
+      S  : Config.Store.Store (Capacity => 8, Values_Capacity => 16, Pool => 1024);
+      Ok : Boolean;
+      HW : Natural;
+   begin
+      Config.Store.Set (S, "db.password", "hunter2-secret", Secret => True, Ok => Ok);
+      Config.Store.Set (S, "api.key", "AKIA-EXAMPLE-999", Secret => True, Ok => Ok);
+      HW := Config.Store.Probe.Pool_High_Water (S);
+      Assert (HW > 0, "pool has material before clear");
+
+      Config.Store.Clear (S);
+
+      declare
+         Nonzero : Natural := 0;
+      begin
+         for I in 1 .. HW loop
+            if Config.Store.Probe.Pool_Byte (S, I) /= 0 then
+               Nonzero := Nonzero + 1;
+            end if;
+         end loop;
+         Assert (Nonzero = 0,
+                 "used pool region is all zero after clear (" &
+                 Natural'Image (Nonzero) & " non-zero bytes)");
+      end;
+
+      --  The store remains usable after the wipe.
+      Config.Store.Set (S, "fresh", "value", Ok => Ok);
+      Assert (Ok and then Config.Store.Count (S) = 1, "store reusable after clear");
+   end Test_Pool_Wiped_On_Clear;
+
    procedure Add_Tests (Suite : AUnit.Test_Suites.Access_Test_Suite) is
    begin
       Suite.Add_Test
@@ -92,6 +127,9 @@ package body Hardening_Tests is
       Suite.Add_Test
         (Caller.Create ("Hardening: precedence stress",
                         Test_Precedence_Stress'Access));
+      Suite.Add_Test
+        (Caller.Create ("Hardening: pool wiped on clear",
+                        Test_Pool_Wiped_On_Clear'Access));
    end Add_Tests;
 
 end Hardening_Tests;

@@ -14,5 +14,6 @@ package Hardening_Tests is
 
    procedure Test_Parser_Fuzz (Item : in out Fixture);
    procedure Test_Precedence_Stress (Item : in out Fixture);
+   procedure Test_Pool_Wiped_On_Clear (Item : in out Fixture);
 
 end Hardening_Tests;

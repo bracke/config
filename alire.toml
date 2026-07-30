@@ -16,8 +16,13 @@ gnat_native = "=15.2.1"
 [[depends-on]]
 representation = "*"
 
+[[depends-on]]
+cryptolib = "*"
+
 [[pins]]
 representation = { path = "../representation" }
+[[pins]]
+cryptolib = { path = "../cryptolib" }
 
 [[actions]]
 type = "test"

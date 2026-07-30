@@ -1,6 +1,17 @@
 with Config.Keys;
+with CryptoLib.Secure_Wipe;
 
 package body Config.Store is
+
+   --  Zero the used region of the char pool (keys + values, some secret). The
+   --  stores are volatile (CryptoLib.Secure_Wipe), so the optimizer cannot
+   --  elide them even when the memory is never read again.
+   procedure Scrub_Pool (S : in out Store) is
+   begin
+      if S.Pool_Top > 0 then
+         CryptoLib.Secure_Wipe.Wipe (S.Chars'Address, S.Pool_Top);
+      end if;
+   end Scrub_Pool;
 
    function Clamp (Value : String) return String is
       Max : constant Natural := Natural (Value_Length'Last);
@@ -40,10 +51,16 @@ package body Config.Store is
 
    procedure Clear (S : in out Store) is
    begin
+      Scrub_Pool (S);   --  wipe the old contents before reusing the arena
       S.N := 0;
       S.Slot_Top := 0;
       S.Pool_Top := 0;
    end Clear;
+
+   overriding procedure Finalize (S : in out Store) is
+   begin
+      Scrub_Pool (S);
+   end Finalize;
 
    function Count (S : Store) return Natural is (S.N);
 

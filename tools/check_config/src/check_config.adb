@@ -170,7 +170,6 @@ procedure Check_Config is
       Forbid ("Messages");
       Forbid ("Httpclient");
       Forbid ("Smtplib");
-      Forbid ("Cryptolib");
       Forbid ("GNAT.Sockets");
       Forbid ("GNAT.OS_Lib");
       Forbid ("Ada.Environment_Variables");
