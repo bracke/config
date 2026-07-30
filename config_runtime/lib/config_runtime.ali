@@ -1,0 +1,54 @@
+V "GNAT Lib v15"
+A -Og
+A -gnatA
+A -ffunction-sections
+A -fdata-sections
+A -g
+A -gnatwa
+A -gnatw.X
+A -gnatVa
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatyB
+A -gnatyb
+A -gnatyc
+A -gnaty-
+A -gnatyd
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyI
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyO
+A -gnatyp
+A -gnatyr
+A -gnatyS
+A -gnatyt
+A -gnatyu
+A -gnatyx
+A -gnatW8
+A -gnat2022
+A -gnatyM120
+A -gnatX
+A -gnata
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U config_runtime%s	config_runtime.ads	814dd382 NE OO PU PK
+
+D config_runtime.ads	20260730130224 814dd382 config_runtime%s
+D system.ads		20250808065140 14286b0f system%s
+G a e
+X 1 config_runtime.ads
+5K9*Config_Runtime 12l5 12e19
+10N4*Max_File_Bytes
+

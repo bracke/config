@@ -1,0 +1,29 @@
+name = "config_runtime"
+description = "Environment and file config sources for the config library"
+version = "0.1.0-dev"
+
+authors = ["Bent Bracke"]
+maintainers = ["Bent Bracke <bent@bracke.dk>"]
+maintainers-logins = ["bracke"]
+licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
+website = "https://github.com/bracke/config"
+
+tags = ["config", "env", "adapter"]
+
+[[depends-on]]
+gnat_native = "=15.2.1"
+
+[[depends-on]]
+config = "*"
+
+[[depends-on]]
+representation = "*"
+
+[[pins]]
+config = { path = ".." }
+
+[[pins]]
+representation = { path = "../../representation" }
+
+[build-profiles]
+"*" = "development"

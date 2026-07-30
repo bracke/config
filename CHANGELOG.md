@@ -5,6 +5,21 @@ Keep a Changelog; the project is pre-1.0 and built phase-by-phase.
 
 ## [Unreleased]
 
+### Phase 7 — Env/format helpers & config_runtime adapter
+- `Config.Env`: pure environment-name -> dotted-key mapping (strip prefix,
+  lowercase, `_` -> `.`), rejecting names that don't match or don't form a valid
+  key.
+- `Config.Formats`: unified `Parse (Format, Text, ...)` dispatch over the four
+  parsers.
+- New `config_runtime` adapter crate (subdirectory): `Environment` (reads
+  prefixed process env vars into the store) and `File` (reads a file, detects the
+  format from the extension, parses; missing optional files are not errors) —
+  both fail-closed and exception-contained.
+- `config_runtime` AUnit suite (3 tests). The quickstart example now layers TOML
+  defaults + an explicit secret + an environment override, reads typed values,
+  and prints a redacted dump; `check_config --release` builds/tests the runtime
+  and runs it (core 29 + runtime 3).
+
 ### Phase 6 — TOML parser
 - `Config.Parsers.Toml`: a bounded recursive-descent TOML parser covering
   comments, `[table]` headers with dotted names, dotted keys, basic/literal

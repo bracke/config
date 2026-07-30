@@ -1,0 +1,232 @@
+V "GNAT Lib v15"
+A -Og
+A -gnatA
+A -ffunction-sections
+A -fdata-sections
+A -g
+A -gnatwa
+A -gnatw.X
+A -gnatVa
+A -gnaty3
+A -gnatya
+A -gnatyA
+A -gnatyB
+A -gnatyb
+A -gnatyc
+A -gnaty-
+A -gnatyd
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyI
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyO
+A -gnatyp
+A -gnatyr
+A -gnatyS
+A -gnatyt
+A -gnatyu
+A -gnatyx
+A -gnatW8
+A -gnat2022
+A -gnatyM120
+A -gnatX
+A -gnata
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_ENUMERATION_MAPS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U config_runtime.file%b	config_runtime-file.adb	9dc9bc69 OO PK
+W ada%s			ada.ads			ada.ali
+W ada.directories%s	a-direct.adb		a-direct.ali
+W ada.streams%s		a-stream.adb		a-stream.ali
+W ada.streams.stream_io%s  a-ststio.adb		a-ststio.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W config%s		config.ads		config.ali
+W config.parsers%s	config-parsers.ads	config-parsers.ali
+W config_runtime%s	config_runtime.ads	config_runtime.ali
+
+U config_runtime.file%s	config_runtime-file.ads	6ff38351 EE OO PF PK
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W config%s		config.ads		config.ali
+W config.formats%s	config-formats.adb	config-formats.ali
+W config.sources%s	config-sources.ads	config-sources.ali
+W config.store%s	config-store.adb	config-store.ali
+W config_runtime%s	config_runtime.ads	config_runtime.ali
+Z system%s		system.ads		system.ali
+Z system.finalization_primitives%s  s-finpri.adb  s-finpri.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.tasking%s	s-taskin.adb		s-taskin.ali
+Z system.wch_stw%s	s-wchstw.adb		s-wchstw.ali
+
+D ada.ads		20250808065140 76789da1 ada%s
+D a-calend.ads		20250808065140 bf7f3cc9 ada.calendar%s
+D a-charac.ads		20250808065140 2d3ec45b ada.characters%s
+D a-chlat1.ads		20250808065140 e0d72e76 ada.characters.latin_1%s
+D a-direct.ads		20250808065140 467e87a1 ada.directories%s
+D a-except.ads		20250808065140 e7970cd9 ada.exceptions%s
+D a-finali.ads		20250808065140 bf4f806b ada.finalization%s
+D a-ioexce.ads		20250808065140 40018c65 ada.io_exceptions%s
+D a-stream.ads		20250808065140 17477cbd ada.streams%s
+D a-ststio.ads		20250808065140 d6d358e8 ada.streams.stream_io%s
+D a-string.ads		20250808065140 90ac6797 ada.strings%s
+D a-strmap.ads		20250808065140 1f91ebb6 ada.strings.maps%s
+D a-strsea.ads		20250808065140 18c3c634 ada.strings.search%s
+D a-sttebu.ads		20250808065140 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		20250808065140 b10770ab ada.strings.unbounded%s
+D a-stuten.ads		20250808065140 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		20250808065140 fbca0ad5 ada.tags%s
+D a-unccon.ads		20250808065140 0e9b276f ada.unchecked_conversion%s
+D config.ads		20260730121927 088d99ac config%s
+D config-formats.ads	20260730130056 cb280adb config.formats%s
+D config-parsers.ads	20260730124205 4200a1d3 config.parsers%s
+D config-sources.ads	20260730123806 dcc7b7ce config.sources%s
+D config-store.ads	20260730123438 8ba60e9f config.store%s
+D config-values.ads	20260730122721 173d13ed config.values%s
+D config_runtime.ads	20260730130224 814dd382 config_runtime%s
+D config_runtime-file.ads  20260730130257 72f7e359 config_runtime.file%s
+D config_runtime-file.adb  20260730130333 2ad45d17 config_runtime.file%b
+D interfac.ads		20250808065140 9111f9c1 interfaces%s
+D i-c.ads		20250808065140 e94c966a interfaces.c%s
+D i-cstrea.ads		20250808065140 ffd01b9d interfaces.c_streams%s
+D system.ads		20250808065140 14286b0f system%s
+D s-atacco.ads		20250808065140 5868e3ba system.address_to_access_conversions%s
+D s-atocou.ads		20250808065140 dc18efc3 system.atomic_counters%s
+D s-crtl.ads		20250808065140 beb39b9e system.crtl%s
+D s-exctab.ads		20250808065140 91bef6ef system.exception_table%s
+D s-ficobl.ads		20250808065140 dc5161d4 system.file_control_block%s
+D s-finpri.ads		20250808065140 5970d55a system.finalization_primitives%s
+D s-finroo.ads		20250808065140 0a7c3ed4 system.finalization_root%s
+D s-linux.ads		20250808065140 34850a8c system.linux%s
+D s-multip.ads		20250808065140 38ac9f73 system.multiprocessors%s
+D s-oscons.ads		20250827122531 068e1a91 system.os_constants%s
+D s-osinte.ads		20250808065140 89e0af7e system.os_interface%s
+D s-oslock.ads		20250808065140 13fa6b78 system.os_locks%s
+D s-parame.ads		20250808065140 3597fc11 system.parameters%s
+D s-putima.ads		20250808065140 17291fe4 system.put_images%s
+D s-retsta.ads		20250808065140 0f6b06cb system.return_stack%s
+D s-secsta.ads		20250808065140 578279f5 system.secondary_stack%s
+D s-soflin.ads		20250808065140 5d88fdea system.soft_links%s
+D s-stache.ads		20250808065140 0b81c1fe system.stack_checking%s
+D s-stausa.ads		20250808065140 5be75682 system.stack_usage%s
+D s-stalib.ads		20250808065140 1c9580f6 system.standard_library%s
+D s-stoele.ads		20250808065140 ccded4e8 system.storage_elements%s
+D s-stopoo.ads		20250808065140 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		20250808065140 516607ae system.stream_attributes%s
+D s-tasinf.ads		20250808065140 528dde74 system.task_info%s
+D s-taspri.ads		20250808065140 1e109e82 system.task_primitives%s
+D s-taskin.ads		20250808065140 38289021 system.tasking%s
+D s-traent.ads		20250808065140 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		20250808065140 fa2a7f59 system.unsigned_types%s
+D s-wchcon.ads		20250808065140 d9032363 system.wch_con%s
+D s-wchstw.ads		20250808065140 2d112c01 system.wch_stw%s
+G a e
+G c Z s b [load config_runtime__file 18 25 none]
+G c Z s s [sourceDF config_runtime__file 11 9 none]
+G c Z s s [sourceIP config_runtime__file 11 9 none]
+G c Z b b [ends_with config_runtime__file 12 13 none]
+G c Z b b [detect_format config_runtime__file 16 14 none]
+G r c none [load config_runtime__file 18 25 none] [parse config__formats 11 14 none]
+X 1 ada.ads
+18K9*Ada 22e8 27|1r6 2r6 3r6 10r13 44r14 50r26 50r55 52r20 62r23 63r23 64r31
+. 65r23 78r13 79r19 80r13 81r13 84r56
+X 5 a-direct.ads
+76K13*Directories 524e20 27|1w10 10r17 44r18 50r30 50r59 52r24
+307I9*File_Size<long_integer> 27|10r29 50r42 52r36
+310V13*Exists{boolean} 27|44s30
+321V13*Size{307I9} 27|50s71
+X 9 a-stream.ads
+36K13*Streams 90e16 27|2w10 3r10 62r27 63r27 64r35 65r27 78r17 79r23 80r17
+. 81r17 84r60
+42M9*Stream_Element
+44I9*Stream_Element_Offset<long_long_integer> 27|64r43 65r35 84r68
+54A9*Stream_Element_Array(42M9)<44I9> 27|63r35
+X 10 a-ststio.ads
+39K21*Stream_IO 224e26 27|3w18 62r35 78r25 79r31 80r25 81r25
+44P9*File_Type 27|62r45
+47n23*In_File{47E9} 27|79r41
+74U14*Open 27|78s35
+80U14*Close 27|81s35
+104U14*Read 27|80s35
+X 19 config.ads
+12K9*Config 33e11 26|6r6 7r6 8r6 12r18 13r18 13r43 20r21 21r14 27|5r6 9r13
+. 17r32 21r17 23r17 27r17 29r17 31r17 38r21 39r14 58r23 66r23 87r13 89r31
+X 20 config-formats.ads
+6K16*Formats 18e19 26|8w13 13r25 13r50 27|17r39 21r24 23r24 27r24 29r24 31r24
+. 58r30 87r20
+8E9*Format 8e44 26|13r33 27|17r47 58r38
+8n20*Dotenv{8E9} 27|29r32
+8n28*Ini{8E9} 27|27r32
+8n33*Json{8E9} 27|23r32
+8n39*Toml{8E9} 26|13r58 27|21r32 31r32
+11U14*Parse 27|87s28
+X 21 config-parsers.ads
+7K16*Parsers 21e19 27|5w13 9r20 66r30 89r38
+11E9*Parse_Status 14e16 27|9r28
+12n7*Parsed{11E9} 27|89r46
+16R9*Parse_Result 19e14 27|66r38
+17e7*Status{11E9} 27|89r22
+X 22 config-sources.ads
+9K16*Sources 27e19 26|6w13 12r25
+13h9*Source 26|12r33
+X 23 config-store.ads
+10K16*Store 102e17 26|7w13 20r28 21r21 27|38r28 39r21
+16I12*Source_Id{natural} 26|21r27 27|39r27
+18R9*Store 100e14 26|20r34 27|38r34
+X 25 config_runtime.ads
+5K9*Config_Runtime 12e19 26|9r9 24r5 27|7r14 97r5
+10N4*Max_File_Bytes 27|52r47
+X 26 config_runtime-file.ads
+9K24*File 25|5k9 26|24l20 24e24 27|7b29 97l20 97t24
+11R9*Source<22|13R9> 11d17 16e14 18P25 19r21 27|37r21
+13e7*Format{20|8E9} 27|71r28
+14b7*Detect{boolean} 27|68r21
+15b7*Optional{boolean} 27|45r21
+18U25*Load<22|21p14> 19=7 20=7 21>7 22<7 27|36b25 95l8 95t12
+19r7 Self{11R9} 27|37b7 42r33 45r16 68r16 71r23
+20r7 Into{23|18R9} 27|38b7 88m48
+21i7 Id{23|16I12} 27|39b7 88r54
+22b7 Ok{boolean} 27|40b7 45m10 53m13 74m16 89m13 94m10
+X 27 config_runtime-file.adb
+12V13 Ends_With{boolean} 12b13 12>24 12>27 20s10 22s13 24s13 24s46 25s17
+. 28s13
+12a24 S{string} 13r7 14r16 14r19 14r49
+12a27 Suffix{string} 13r19 14r28 14r59
+16U14 Detect_Format 16b14 17>7 17<22 17<55 34l8 34t21 69s16
+17a7 Path{string} 20r21 22r24 24r24 24r57 25r28 28r24
+17e22 Fmt{20|8E9} 21m10 23m10 27m10 29m10 31m10
+17b55 Ok{boolean} 19m7 32m10
+42a7 Path{string} 44r38 50r77 69r31 79r50
+50i10 Size{5|307I9} 52r13 60r52
+58e13 Fmt{20|8E9} 69m37 71m16 88r16
+59b13 Det_Ok{boolean} 69m42 73r20
+60i13 N{natural} 61r36 64r66
+61a13 Buf{string} 84m16 88r21
+62p13 F{10|44P9} 79m16 79r16 80r41 81m42 81r42
+63a13 SEA{9|54A9} 80m44 84r51
+65i13 Last{9|44I9} 80m49 83r36 88r40
+66r13 PR{21|16R9} 88m58 89r19
+83i17 I{integer} 84r21 84r91
+X 50 s-stausa.ads
+207U14*Initialize 208i<c,__gnat_stack_usage_initialize>22
+272U14*Output_Results 276i<c,__gnat_stack_usage_output_results>22
+

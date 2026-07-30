@@ -15,4 +15,7 @@ scalar vocabulary.
 | `Config.Parsers.Dotenv` / `.Ini` | Line-oriented parsers. | 4 |
 | `Config.Parsers.Json` | JSON source via `representation`. | 5 |
 | `Config.Parsers.Toml` | TOML parser. | 6 |
-| `Config.Testing` | Deterministic in-memory sources / fixed env. | 7 |
+| `Config.Env` | Environment-name -> dotted-key mapping (pure). | 7 |
+| `Config.Formats` | Unified parser dispatch. | 7 |
+| `Config_Runtime` (crate) | `Environment` + `File` sources — the I/O adapters. | 7 |
+| (`Config.Sources.Memory` serves as the deterministic in-core source double.) | | 3 |

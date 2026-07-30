@@ -96,6 +96,8 @@ procedure Check_Config is
    begin
       Need_Directory ("src");
       Need_Directory ("tests/config_tests");
+      Need_Directory ("config_runtime");
+      Need_Directory ("config_runtime/tests/config_runtime_tests");
       Need_Directory ("examples/config_examples");
       Need_Directory ("tools");
       Need_Directory ("docs");
@@ -115,6 +117,7 @@ procedure Check_Config is
       Need_File ("CONTRIBUTING.md");
       Need_File ("src/config.ads");
       Need_File ("tests/config_tests/alire.toml");
+      Need_File ("config_runtime/alire.toml");
       Need_File ("examples/config_examples/alire.toml");
       Need_File ("examples/config_examples/src/quickstart.adb");
       Need_File ("invariant-registry/mapping.md");
@@ -193,6 +196,9 @@ procedure Check_Config is
       Alr : constant String := Proc.Locate_Command ("alr");
 
       Tests_Dir : constant String := The_Root & "/tests/config_tests";
+      Rt_Dir    : constant String := The_Root & "/config_runtime";
+      Rt_Tests  : constant String :=
+        Rt_Dir & "/tests/config_runtime_tests";
       Ex_Dir    : constant String := The_Root & "/examples/config_examples";
       No_Args   : constant GNAT.OS_Lib.Argument_List := [];
    begin
@@ -205,6 +211,14 @@ procedure Check_Config is
               [new String'("--non-interactive"), new String'("build")])
       then
          Ignored := Run ("run tests", Tests_Dir, Tests_Dir & "/bin/tests", No_Args);
+      end if;
+      if Run ("build runtime", Rt_Dir, Alr,
+              [new String'("--non-interactive"), new String'("build")])
+        and then Run ("build runtime tests", Rt_Tests, Alr,
+                      [new String'("--non-interactive"), new String'("build")])
+      then
+         Ignored :=
+           Run ("run runtime tests", Rt_Tests, Rt_Tests & "/bin/tests", No_Args);
       end if;
       if Run ("build example", Ex_Dir, Alr,
               [new String'("--non-interactive"), new String'("build")])

@@ -1,0 +1,32 @@
+name = "config_runtime_tests"
+description = "AUnit test suite for config_runtime"
+version = "0.1.0-dev"
+authors = ["Bent Bracke"]
+maintainers = ["Bent Bracke <bent@bracke.dk>"]
+maintainers-logins = ["bracke"]
+licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = []
+
+executables = ["tests"]
+
+[[depends-on]]
+gnat_native = "=15.2.1"
+[[depends-on]]
+aunit = "^26.0.0"
+[[depends-on]]
+config_runtime = "*"
+[[depends-on]]
+config = "*"
+[[depends-on]]
+representation = "*"
+
+[[pins]]
+config_runtime = { path = "../.." }
+[[pins]]
+config = { path = "../../.." }
+[[pins]]
+representation = { path = "../../../../representation" }
+
+[build-profiles]
+"*" = "development"

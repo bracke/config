@@ -11,5 +11,5 @@ Built phase-by-phase; each phase is buildable, its suite green, and committed.
 | 4 | dotenv + INI parsers (bounded, injection-safe) | **done** |
 | 5 | JSON source via `representation` (objects -> dotted keys, arrays -> value lists) | **done** |
 | 6 | TOML parser (tables, arrays, typed scalars, datetimes, dotted keys) | **done** |
-| 7 | `config_runtime` adapter (env + file sources) + `Config.Testing` doubles + example | planned |
+| 7 | Core `Config.Env` + `Config.Formats`; `config_runtime` adapter (env + file sources); example | **done** |
 | 8 | Hardening (parser fuzz, precedence tests), docs/registry complete, `check_config --release` green -> V1 | planned |

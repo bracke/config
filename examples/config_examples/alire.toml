@@ -12,12 +12,19 @@ executables = ["quickstart"]
 
 [[depends-on]]
 gnat_native = "=15.2.1"
-
 [[depends-on]]
 config = "*"
+[[depends-on]]
+config_runtime = "*"
+[[depends-on]]
+representation = "*"
 
 [[pins]]
 config = { path = "../.." }
+[[pins]]
+config_runtime = { path = "../../config_runtime" }
+[[pins]]
+representation = { path = "../../../representation" }
 
 [build-profiles]
 "*" = "development"
