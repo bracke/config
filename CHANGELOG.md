@@ -5,6 +5,19 @@ Keep a Changelog; the project is pre-1.0 and built phase-by-phase.
 
 ## [Unreleased]
 
+### Phase 3 — Sources, precedence & typed access
+- `Config.Sources`: the source seam (`Load` populates a store, tagged with a
+  provenance id). Applying sources in increasing precedence order yields layered
+  config; a later source overrides an earlier one (CFG-INV-003).
+- `Config.Sources.Memory`: an in-memory source (Set/Append staged, replayed by
+  Load) for defaults/overrides and tests.
+- `Config.Reader`: typed getters (`Get_String/Integer/Float/Boolean`) with
+  required-vs-default and a `Lookup_Status` (Found/Missing/Invalid) — missing or
+  unparseable values are reported, never raised (CFG-INV-004/005); integer/float
+  via the language's validated 'Value with internal containment. `Dump` renders
+  the effective config with secret keys redacted (CFG-INV-006).
+- `Reader_Tests` suite (4 tests).
+
 ### Phase 2 — Bounded store
 - `Config.Store`: a bounded, limited flat map from a dotted key to an ordered
   value list, each key carrying its kind, provenance (source id), and secret
