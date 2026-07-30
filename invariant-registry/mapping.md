@@ -9,9 +9,9 @@
 | CFG-INV-005 | `Reader_Tests.Test_Missing_And_Invalid` (non-numeric/non-boolean reported, never raised) | proven |
 | CFG-INV-006 | `Reader_Tests.Test_Redacted_Dump` (secret key rendered as placeholder; value absent) | proven |
 | CFG-INV-007 | `Parser_Tests.Test_Dotenv_Malformed`, `Test_Ini_Malformed` (malformed dotenv/INI reported with line, never raised) | proven |
-| CFG-INV-008 | `Parser_Tests.Test_Dotenv`/`Test_Ini`, `Json_Tests.*` (dotenv/INI/JSON parse to the same store model) | proven |
+| CFG-INV-008 | `Parser_Tests.*`, `Json_Tests.*`, `Toml_Tests.*` (dotenv/INI/JSON/TOML parse to the same store model) | proven |
 | CFG-INV-009 | `Json_Tests.Test_Json_Object`/`Test_Json_Arrays`/`Test_Json_Errors` (JSON parsed via `Representation.JSON.Documents`) | proven |
 | CFG-INV-010 | dependency-boundary audit in `check_config`; core `with`s only stdlib + representation | audited |
 
-All CFG-INV-001..010 are proven or audited. TOML support and the config_runtime
-adapter land in later phases on top of this baseline.
+All CFG-INV-001..010 are proven or audited. The config_runtime
+adapter lands in a later phase on top of this baseline.

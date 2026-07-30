@@ -5,6 +5,17 @@ Keep a Changelog; the project is pre-1.0 and built phase-by-phase.
 
 ## [Unreleased]
 
+### Phase 6 — TOML parser
+- `Config.Parsers.Toml`: a bounded recursive-descent TOML parser covering
+  comments, `[table]` headers with dotted names, dotted keys, basic/literal
+  strings (single-line and multiline), integers (decimal/hex/octal/binary with
+  `_` separators and sign, normalised to decimal), floats, booleans, datetimes
+  (kept as text), scalar arrays (value lists), and inline tables (flattened to
+  dotted keys). Array-of-tables (`[[t]]`) and arrays containing arrays/tables are
+  reported as unsupported; malformed input is reported with a line, never raised
+  (CFG-INV-007). All four formats now share one store model (CFG-INV-008).
+- `Toml_Tests` suite (5 tests).
+
 ### Phase 5 — JSON source
 - `Config.Parsers.Json`: parse a JSON object into a store using
   `Representation.JSON.Documents` (CFG-INV-009). Nested objects flatten to dotted

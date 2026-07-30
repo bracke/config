@@ -10,6 +10,6 @@ Built phase-by-phase; each phase is buildable, its suite green, and committed.
 | 3 | `Config.Sources` seam + layering/precedence/merge + typed access (`Get_*`) + redacted dump | **done** |
 | 4 | dotenv + INI parsers (bounded, injection-safe) | **done** |
 | 5 | JSON source via `representation` (objects -> dotted keys, arrays -> value lists) | **done** |
-| 6 | TOML parser (tables, arrays, typed scalars, datetimes, dotted keys) | planned |
+| 6 | TOML parser (tables, arrays, typed scalars, datetimes, dotted keys) | **done** |
 | 7 | `config_runtime` adapter (env + file sources) + `Config.Testing` doubles + example | planned |
 | 8 | Hardening (parser fuzz, precedence tests), docs/registry complete, `check_config --release` green -> V1 | planned |
