@@ -1,3 +1,5 @@
+with Ada.Command_Line;
+with AUnit;
 with AUnit.Run;
 with AUnit.Reporter.Text;
 with AUnit.Test_Suites;
@@ -12,8 +14,13 @@ procedure Tests is
       return S;
    end Suite;
 
-   procedure Run is new AUnit.Run.Test_Runner (Suite);
+   --  Test_Runner exits 0 however many assertions failed; take the status
+   --  and fail the process on anything but success.
+   function Run is new AUnit.Run.Test_Runner_With_Status (Suite);
    Reporter : AUnit.Reporter.Text.Text_Reporter;
+   use type AUnit.Status;
 begin
-   Run (Reporter);
+   if Run (Reporter) /= AUnit.Success then
+      Ada.Command_Line.Set_Exit_Status (Ada.Command_Line.Failure);
+   end if;
 end Tests;
