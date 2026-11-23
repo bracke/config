@@ -21,9 +21,9 @@ representation = "*"
 cryptolib = "*"
 
 [[pins]]
-representation = { path = "../representation" }
+representation = { url = "https://github.com/bracke/representation.git", commit = "23a5655b43679f4919d215b488c73a00eb79f8e3" }
 [[pins]]
-cryptolib = { path = "../cryptolib" }
+cryptolib = { url = "https://github.com/bracke/cryptolib.git", commit = "2e5c415f65fd49c2a496c97813740fa9b83e02fa" }
 
 [[actions]]
 type = "test"
